@@ -1,11 +1,17 @@
+import { useContext } from 'react'
+import TodosContext from '../context/TodosContext'
 import TodosList from './TodosList'
-
-const AddTodo = () => {
+console.log(TodosContext)
+const AddTodos = () => {
+  const todos = useContext(TodosContext)
+  console.log(todos)
   return (
     <>
       <div className='add-todo-section'>
+        {todos}
         <h2>Add Todo</h2>
-        <input type='text' />
+        <input type='text' placeholder='Enter todo...' />
+        <button>Add Todo</button>
       </div>
       <div className='show-todos-section'>
         <TodosList />
@@ -14,4 +20,4 @@ const AddTodo = () => {
   )
 }
 
-export default AddTodo
+export default AddTodos
